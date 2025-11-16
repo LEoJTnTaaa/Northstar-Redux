@@ -200,6 +200,10 @@ public class NorthstarTagGen {
                 .add(Items.LEATHER_CHESTPLATE)
                 .add(Items.LEATHER_LEGGINGS)
                 .add(Items.LEATHER_BOOTS);
+
+        // Optional lithium compat: if TFMG is present, its crushed lithium will fill this tag.
+        tags.tag(NorthstarItemTags.C_RAW_MATERIALS_LITHIUM)
+                .opt(ModCompat.TFMG, "crushed_raw_lithium");
     }
 
     private static void entities(RegistrateTagsProvider<EntityType<?>> provider) {
@@ -253,6 +257,8 @@ public class NorthstarTagGen {
                 .opt(ModCompat.TFMG, "diesel");
         tags.tag(NorthstarFluidTags.COMPAT_TFMG_NAPHTHA)
                 .opt(ModCompat.TFMG, "naphtha");
+        tags.tag(NorthstarFluidTags.COMPAT_TFMG_GASOLINE)
+                .opt(ModCompat.TFMG, "gasoline");
     }
 
     public static class Damage extends TagsProvider<DamageType> {
@@ -263,12 +269,10 @@ public class NorthstarTagGen {
         @Override
         protected void addTags(HolderLookup.Provider provider) {
             tag(DamageTypeTags.BYPASSES_ARMOR)
-                    .add(NorthstarDamageTypes.SUFFOCATION);
-            tag(DamageTypeTags.BYPASSES_ENCHANTMENTS)
-                    .add(NorthstarDamageTypes.SUFFOCATION);
-            tag(DamageTypeTags.BYPASSES_ARMOR)
+                    .add(NorthstarDamageTypes.SUFFOCATION)
                     .add(NorthstarDamageTypes.ACID);
             tag(DamageTypeTags.BYPASSES_ENCHANTMENTS)
+                    .add(NorthstarDamageTypes.SUFFOCATION)
                     .add(NorthstarDamageTypes.ACID);
 
         }

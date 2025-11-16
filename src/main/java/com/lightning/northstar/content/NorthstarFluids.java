@@ -60,6 +60,7 @@ public class NorthstarFluids {
 
     public static final FluidEntry<VirtualFluid> HYDROGEN_CHLORIDE = REGISTRATE
             .virtualFluid("hydrogen_chloride")
+            .properties(p -> p.density(-1000).viscosity(200))
             .tag(NorthstarFluidTags.C_GASEOUS.tag)
             .tag(NorthstarFluidTags.C_HYDROGEN_CHLORIDE.tag)
             .register();

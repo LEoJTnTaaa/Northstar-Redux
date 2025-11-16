@@ -58,22 +58,22 @@ public class NorthstarFuelTypeGen {
                 .build());
 
         context.register(key("tfmg_diesel"), FuelType.builder()
-                .fluid(TFMGFluids.DIESEL.getSource())
+                .tag(NorthstarFluidTags.COMPAT_TFMG_DIESEL)
                 .combustionEngine(1, 16)
                 .build());
 
         context.register(key("tfmg_gasoline"), FuelType.builder()
-                .fluid(TFMGFluids.GASOLINE.getSource())
+                .tag(NorthstarFluidTags.COMPAT_TFMG_GASOLINE)
                 .combustionEngine(1, 16)
                 .build());
 
         context.register(key("tfmg_naphtha"), FuelType.builder()
-                .fluid(TFMGFluids.NAPHTHA.getSource())
+                .tag(NorthstarFluidTags.COMPAT_TFMG_NAPHTHA)
                 .gjPerMb(0.75f)
                 .build());
 
         context.register(key("tfmg_kerosene"), FuelType.builder()
-                .fluid(TFMGFluids.KEROSENE.getSource())
+                .tag(NorthstarFluidTags.COMPAT_TFMG_KEROSENE)
                 .gjPerMb(1.00f)
                 .build());
     }
